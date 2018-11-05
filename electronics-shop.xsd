@@ -9,7 +9,6 @@
 
     <!--  definition of simple elements -->
     <xs:element name="electronics-shop" type="electronics-shop_type">
-
         <!-- definition of key/keyref -->
         <xs:keyref name="manufacturer-id_keyRef" refer="manufacturer-id_key">
             <xs:selector xpath="manufacturer/*"/>
@@ -20,6 +19,14 @@
             <xs:field xpath="manufacturer-id"/>
         </xs:key>
 
+        <xs:keyref name="category-id_keyref" refer="category-id_key">
+            <xs:selector xpath="product-type/*"/>
+            <xs:field xpath="@category-id"/>
+        </xs:keyref>
+        <xs:key name="category-id_key">
+            <xs:selector xpath="product/*"/>
+            <xs:field xpath="category-id"/>
+        </xs:key>
     </xs:element>
 
     <xs:element name="document-information" type="document-information_type"/>
@@ -73,7 +80,7 @@
     <!-- definition of attributes -->
     <xs:attributeGroup name="product-attributes">
         <xs:attribute name="product-id" type="xs:ID" use="required"/>
-        <xs:attribute name="category-id" type="xs:IDREF" use="required"/>
+        <xs:attribute name="category-id" type="xs:string" use="required"/>
         <xs:attribute name="manufacturer-id" type="xs:string" use="required"/>
     </xs:attributeGroup>
 
