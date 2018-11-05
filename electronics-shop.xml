@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<?xml-stylesheet href="electronics-shop.css"?>
-<!DOCTYPE electronics-shop SYSTEM "electronics-shop.dtd">
-<electronics-shop>
+<es:electronics-shop
+        xmlns:es="http://www.xmlTechnology.org/electronics-shop-namespace"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.xmlTechnology.org/electronics-shop-namespace electronics-shop.xsd">
     <document-information>
         <author>
             <first-name>Łukasz</first-name>
@@ -316,6 +317,7 @@
                 <free-delivery available="available"/>
                 <additional-information>Car charger included with every order.</additional-information>
             </product>
+
             <product product-id="s62" category-id="smartphone" manufacturer-id="oneplus">
                 <name>Oneplus 3</name>
                 <price currency="pln" on-sale="no">1799</price>
@@ -504,4 +506,4 @@
             </product>
         </products-list>
     </data>
-</electronics-shop>
+</es:electronics-shop>

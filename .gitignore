@@ -2,3 +2,5 @@
 *.json
 .vs/XML-Task1/v15/.suo
 *.sqlite
+.idea
+XML-Task2.zip
