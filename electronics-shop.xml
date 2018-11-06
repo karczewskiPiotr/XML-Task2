@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<es:electronics-shop
-        xmlns:es="http://www.xmlTechnology.org/electronics-shop-namespace"
+<electronics-shop
+        xmlns="electronics-shop-namespace"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.xmlTechnology.org/electronics-shop-namespace electronics-shop.xsd">
+        xsi:schemaLocation="electronics-shop-namespace electronics-shop.xsd">
     <document-information>
         <author>
             <first-name>Łukasz</first-name>
@@ -506,4 +506,4 @@
             </product>
         </products-list>
     </data>
-</es:electronics-shop>
+</electronics-shop>
