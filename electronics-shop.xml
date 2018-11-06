@@ -107,7 +107,7 @@
                 <user-rating>4</user-rating>
                 <in-stock>23</in-stock>
                 <free-delivery available="available"/>
-                <additional-information/>
+                
             </product>
             <product product-id="i51" category-id="notebook" manufacturer-id="apple">
                 <name>Apple MacBook Pro</name>
@@ -164,7 +164,7 @@
                 <user-rating>4.4</user-rating>
                 <in-stock>2154</in-stock>
                 <free-delivery available="available"/>
-                <additional-information/>
+                
             </product>
             <product product-id="i54" category-id="notebook" manufacturer-id="dell">
                 <name>Dell Inspiron 5379</name>
@@ -202,7 +202,7 @@
                 <user-rating>4.9</user-rating>
                 <in-stock>325</in-stock>
                 <free-delivery available="non-available"/>
-                <additional-information/>
+                
             </product>
             <product product-id="i56" category-id="monitor" manufacturer-id="samsung">
                 <name>Samsung Curved LCD24IPSFHD</name>
@@ -278,7 +278,6 @@
                 <user-rating>3.9</user-rating>
                 <in-stock>34</in-stock>
                 <free-delivery available="non-available"/>
-                <additional-information/>
             </product>
             <product product-id="i60" category-id="keyboard" manufacturer-id="asus">
                 <name>Asus ROG Strix Flare</name>
@@ -296,7 +295,7 @@
                 <user-rating>4.3</user-rating>
                 <in-stock>249</in-stock>
                 <free-delivery available="available"/>
-                <additional-information/>
+                
             </product>
             <product product-id="i61" category-id="smartphone" manufacturer-id="oneplus">
                 <name>OnePlus 6</name>
@@ -353,7 +352,7 @@
                 <user-rating>4.1</user-rating>
                 <in-stock>113</in-stock>
                 <free-delivery available="non-available"/>
-                <additional-information/>
+                
             </product>
             <product product-id="i64" category-id="accessory" manufacturer-id="acer">
                 <name>Materil Laptop Pouch</name>
@@ -371,7 +370,7 @@
                 <user-rating>4</user-rating>
                 <in-stock>34</in-stock>
                 <free-delivery available="available"/>
-                <additional-information/>
+                
             </product>
             <product product-id="i65" category-id="notebook" manufacturer-id="dell">
                 <name>Dell XPS 15</name>
@@ -390,7 +389,7 @@
                 <user-rating>4.9</user-rating>
                 <in-stock>128</in-stock>
                 <free-delivery available="available"/>
-                <additional-information/>
+                
             </product>
             <product product-id="i66" category-id="mouse" manufacturer-id="asus">
                 <name>Asus ROG Strix Impact</name>
@@ -408,7 +407,7 @@
                 <user-rating>3.7</user-rating>
                 <in-stock>78</in-stock>
                 <free-delivery available="non-available"/>
-                <additional-information/>
+                
             </product>
             <product product-id="i67" category-id="tv" manufacturer-id="samsung">
                 <name>Samsung UE49NU7ST4K</name>
@@ -427,7 +426,7 @@
                 <user-rating>3.4</user-rating>
                 <in-stock>12</in-stock>
                 <free-delivery available="available"/>
-                <additional-information/>
+                
             </product>
             <product product-id="i68" category-id="smartphone" manufacturer-id="razer">
                 <name>Razer Phone 2</name>
@@ -446,7 +445,7 @@
                 <user-rating>4</user-rating>
                 <in-stock>241</in-stock>
                 <free-delivery available="non-available"/>
-                <additional-information/>
+                
             </product>
             <product product-id="i69" category-id="accessory" manufacturer-id="razer">
                 <name>Razer Mouse Bungee</name>
@@ -464,7 +463,7 @@
                 <user-rating>4.1</user-rating>
                 <in-stock>132</in-stock>
                 <free-delivery available="available"/>
-                <additional-information/>
+                
             </product>
             <product product-id="i70" category-id="monitor" manufacturer-id="acer">
                 <name>Acer Nitro VG24IPS144HZ</name>

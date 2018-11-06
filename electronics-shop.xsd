@@ -96,7 +96,7 @@
             <xs:element ref="es:user-rating"/>
             <xs:element ref="es:in-stock"/>
             <xs:element ref="es:free-delivery"/>
-            <xs:element ref="es:additional-information"/>
+            <xs:element ref="es:additional-information" minOccurs="0"/>
         </xs:sequence>
     </xs:group>
 
