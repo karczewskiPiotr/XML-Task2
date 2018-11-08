@@ -11,23 +11,23 @@
     <!--  definition of simple elements -->
     <xs:element name="electronics-shop" type="es:electronics-shop_type">
         <!-- definition of key/keyref -->
-        <xs:keyref name="manufacturer-id_keyRef" refer="es:manufacturer-id_key">
-            <xs:selector xpath="./data/categories/manufacturers/manufacturer"/>
-            <xs:field xpath="@manufacturer-id"/>
-        </xs:keyref>
         <xs:key name="manufacturer-id_key">
-            <xs:selector xpath="./data/products-list/product"/>
+            <xs:selector xpath="data/categories/manufacturers/manufacturer"/>
             <xs:field xpath="@manufacturer-id"/>
         </xs:key>
-
-        <xs:keyref name="category-id_keyref" refer="es:category-id_key">
-            <xs:selector xpath="d./ata/categories/product-types/product-type"/>
-            <xs:field xpath="@category-id"/>
+        <xs:keyref name="manufacturer-id_keyRef" refer="manufacturer-id_key">
+            <xs:selector xpath="data/products-list/product"/>
+            <xs:field xpath="@manufacturer-id"/>
         </xs:keyref>
+
         <xs:key name="category-id_key">
-            <xs:selector xpath="./data/products-list/product"/>
+            <xs:selector xpath="data/categories/product-types/product-type"/>
             <xs:field xpath="@category-id"/>
         </xs:key>
+        <xs:keyref name="category-id_keyref" refer="category-id_key">
+            <xs:selector xpath="data/products-list/product"/>
+            <xs:field xpath="@category-id"/>
+        </xs:keyref>
     </xs:element>
 
     <xs:element name="document-information" type="es:document-information_type"/>
