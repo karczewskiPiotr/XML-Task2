@@ -1,61 +1,48 @@
 <?xml version="1.0"?>
-
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns:pt="product-type-namespace"
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:pt="product-type-namespace"
            targetNamespace="electronics-shop-namespace"
-           xmlns:es="electronics-shop-namespace"
+    xmlns:es="electronics-shop-namespace"
            elementFormDefault="qualified">
-
     <xs:import schemaLocation="product-type.xsd" namespace="product-type-namespace"/>
-
     <!--  definition of simple elements -->
     <xs:element name="electronics-shop" type="es:electronics-shop_type">
         <!-- definition of key/keyref -->
         <xs:key name="manufacturer-id_key">
-            <xs:selector xpath="data/categories/manufacturers/manufacturer"/>
+            <xs:selector xpath="es:data/es:categories/es:manufacturers/es:manufacturer"/>
             <xs:field xpath="@manufacturer-id"/>
         </xs:key>
-        <xs:keyref name="manufacturer-id_keyRef" refer="manufacturer-id_key">
-            <xs:selector xpath="data/products-list/product"/>
+        <xs:keyref name="manufacturer-id_keyRef" refer="es:manufacturer-id_key">
+            <xs:selector xpath="es:data/es:products-list/es:product"/>
             <xs:field xpath="@manufacturer-id"/>
         </xs:keyref>
-
         <xs:key name="category-id_key">
-            <xs:selector xpath="data/categories/product-types/product-type"/>
+            <xs:selector xpath="es:data/es:categories/es:product-types/es:product-type"/>
             <xs:field xpath="@category-id"/>
         </xs:key>
-        <xs:keyref name="category-id_keyref" refer="category-id_key">
-            <xs:selector xpath="data/products-list/product"/>
+        <xs:keyref name="category-id_keyref" refer="es:category-id_key">
+            <xs:selector xpath="es:data/es:products-list/es:product"/>
             <xs:field xpath="@category-id"/>
         </xs:keyref>
     </xs:element>
-
     <xs:element name="document-information" type="es:document-information_type"/>
     <xs:element name="data" type="es:data_type"/>
-
     <xs:element name="author" type="es:author_type" />
     <xs:element name="description" type="xs:string"/>
-
     <xs:element name="first-name" type="xs:string"/>
     <xs:element name="last-name" type="xs:string" />
     <xs:element name="student-id" type="xs:integer"/>
-
     <xs:element name="categories" type="es:categories_type"/>
     <xs:element name="products-list" type="es:products-list_type"/>
-
     <xs:element name="product-types" type="es:product-types_type"/>
-
     <xs:element name="manufacturer" type="es:manufacturer_type"/>
-
     <xs:element name="manufacturer-name" type="xs:string"/>
     <xs:element name="headquarters" type="es:headquarters_type"/>
     <xs:element name="factory" type="xs:string"/>
-
     <xs:element name="location" type="xs:string"/>
     <xs:element name="country" type="xs:string"/>
-
     <xs:element name="product-type" type="pt:product-type_type"/>
-
     <xs:element name="product" type="es:product_type"/>
     <xs:element name="name" type="xs:string"/>
     <xs:element name="price" type="es:price_type"/>
@@ -66,25 +53,20 @@
     <xs:element name="in-stock" type="xs:integer"/>
     <xs:element name="free-delivery" type="es:free-delivery_type"/>
     <xs:element name="additional-information" type="xs:string"/>
-
     <xs:element name="day" type="xs:integer"/>
     <xs:element name="month" type="xs:integer"/>
     <xs:element name="year" type="xs:integer"/>
-
     <xs:element name="weight" type="es:weight_type"/>
     <xs:element name="display-size" type="es:display-size_type"/>
     <xs:element name="color" type="xs:string"/>
     <xs:element name="switch" type="xs:string"/>
     <xs:element name="sensor" type="xs:string"/>
-
-
     <!-- definition of attributes -->
     <xs:attributeGroup name="product-attributes">
         <xs:attribute name="product-id" type="xs:ID" use="required"/>
         <xs:attribute name="category-id" type="xs:string" use="required"/>
         <xs:attribute name="manufacturer-id" type="xs:string" use="required"/>
     </xs:attributeGroup>
-
     <!-- definition of group elements -->
     <xs:group name="product_elements">
         <xs:sequence>
@@ -99,7 +81,6 @@
             <xs:element ref="es:additional-information" minOccurs="0"/>
         </xs:sequence>
     </xs:group>
-
     <!-- definition of simple types -->
     <xs:simpleType name="user-rating_type">
         <xs:restriction base="xs:double">
@@ -107,7 +88,6 @@
             <xs:maxInclusive value="5"/>
         </xs:restriction>
     </xs:simpleType>
-
     <xs:simpleType name="currency_type">
         <xs:restriction base="xs:string">
             <xs:enumeration value="pln"/>
@@ -116,7 +96,6 @@
             <xs:enumeration value="gbp"/>
         </xs:restriction>
     </xs:simpleType>
-
     <!-- definition of complex types -->
     <xs:complexType name="electronics-shop_type">
         <xs:sequence>
@@ -124,14 +103,12 @@
             <xs:element ref="es:data"/>
         </xs:sequence>
     </xs:complexType>
-
     <xs:complexType name="document-information_type">
         <xs:sequence>
             <xs:element ref="es:author" minOccurs="2" maxOccurs="2"/>
             <xs:element ref="es:description"/>
         </xs:sequence>
     </xs:complexType>
-
     <xs:complexType name="author_type" >
         <xs:sequence>
             <xs:element ref="es:first-name"/>
@@ -139,14 +116,12 @@
             <xs:element ref="es:student-id"/>
         </xs:sequence>
     </xs:complexType>
-
     <xs:complexType name="data_type">
         <xs:sequence>
             <xs:element ref="es:categories"/>
             <xs:element ref="es:products-list"/>
         </xs:sequence>
     </xs:complexType>
-
     <xs:complexType name="categories_type">
         <xs:sequence>
             <xs:element name="manufacturers">
@@ -159,7 +134,6 @@
             <xs:element ref="es:product-types"/>
         </xs:sequence>
     </xs:complexType>
-
     <xs:complexType name="manufacturer_type">
         <xs:sequence>
             <xs:element ref="es:manufacturer-name"/>
@@ -168,14 +142,12 @@
         </xs:sequence>
         <xs:attribute name="manufacturer-id" type="xs:string" use="required"/>
     </xs:complexType>
-
     <xs:complexType name="headquarters_type">
         <xs:sequence>
             <xs:element ref="es:location"/>
             <xs:element ref="es:country"/>
         </xs:sequence>
     </xs:complexType>
-
     <xs:complexType name="product-types_type">
         <xs:sequence maxOccurs="8">
             <xs:element ref="es:product-type"/>
@@ -183,27 +155,23 @@
         <xs:attribute name="class"/>
         <xs:attribute name="title"/>
     </xs:complexType>
-
     <xs:complexType name="product_type">
         <xs:group ref="es:product_elements"/>
         <xs:attributeGroup ref="es:product-attributes"/>
     </xs:complexType>
-
     <xs:complexType name="products-list_type">
         <xs:sequence maxOccurs="unbounded">
             <xs:element ref="es:product"/>
         </xs:sequence>
     </xs:complexType>
-
     <xs:complexType name="price_type">
         <xs:simpleContent>
-        <xs:extension base="xs:double">
-            <xs:attribute name="currency" type="es:currency_type"/>
-            <xs:attribute name="on-sale" type="xs:string"/>
-        </xs:extension>
-    </xs:simpleContent>
+            <xs:extension base="xs:double">
+                <xs:attribute name="currency" type="es:currency_type"/>
+                <xs:attribute name="on-sale" type="xs:string"/>
+            </xs:extension>
+        </xs:simpleContent>
     </xs:complexType>
-
     <xs:complexType name="release-date_type">
         <xs:sequence>
             <xs:element ref="es:day"/>
@@ -211,7 +179,6 @@
             <xs:element ref="es:year"/>
         </xs:sequence>
     </xs:complexType>
-
     <xs:complexType name="warranty_type">
         <xs:simpleContent>
             <xs:extension base="xs:integer">
@@ -219,7 +186,6 @@
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
-
     <xs:complexType name="specification_type">
         <xs:sequence>
             <xs:element ref="es:weight"/>
@@ -231,7 +197,6 @@
             </xs:choice>
         </xs:sequence>
     </xs:complexType>
-
     <xs:complexType name="free-delivery_type">
         <xs:simpleContent>
             <xs:extension base="xs:string">
@@ -245,7 +210,6 @@
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
-
     <xs:complexType name="weight_type">
         <xs:simpleContent>
             <xs:extension base="xs:double">
@@ -261,7 +225,6 @@
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
-
     <xs:complexType name="display-size_type">
         <xs:simpleContent>
             <xs:extension base="xs:string">
@@ -269,5 +232,4 @@
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
-
 </xs:schema>
