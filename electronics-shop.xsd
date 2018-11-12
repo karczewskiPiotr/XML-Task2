@@ -10,7 +10,7 @@
     <xs:element name="electronics-shop" type="es:electronics-shop_type">
         <!-- definition of key/keyref -->
         <xs:key name="manufacturer-id_key">
-            <xs:selector xpath="es:data/es:categories/es:manufacturers/es:manufacturer"/>
+            <xs:selector xpath="es:data/es:product-filters/es:manufacturers/es:manufacturer"/>
             <xs:field xpath="@manufacturer-id"/>
         </xs:key>
         <xs:keyref name="manufacturer-id_keyRef" refer="es:manufacturer-id_key">
@@ -18,7 +18,7 @@
             <xs:field xpath="@manufacturer-id"/>
         </xs:keyref>
         <xs:key name="category-id_key">
-            <xs:selector xpath="es:data/es:categories/es:product-types/es:product-type"/>
+            <xs:selector xpath="es:data/es:product-filters/es:product-types/es:product-type"/>
             <xs:field xpath="@category-id"/>
         </xs:key>
         <xs:keyref name="category-id_keyref" refer="es:category-id_key">
@@ -33,7 +33,7 @@
     <xs:element name="first-name" type="xs:string"/>
     <xs:element name="last-name" type="xs:string" />
     <xs:element name="student-id" type="xs:integer"/>
-    <xs:element name="categories" type="es:categories_type"/>
+    <xs:element name="product-filters" type="es:product-filters_type"/>
     <xs:element name="products-list" type="es:products-list_type"/>
     <xs:element name="product-types" type="es:product-types_type"/>
     <xs:element name="manufacturer" type="es:manufacturer_type"/>
@@ -118,11 +118,11 @@
     </xs:complexType>
     <xs:complexType name="data_type">
         <xs:sequence>
-            <xs:element ref="es:categories"/>
+            <xs:element ref="es:product-filters"/>
             <xs:element ref="es:products-list"/>
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="categories_type">
+    <xs:complexType name="product-filters_type">
         <xs:sequence>
             <xs:element name="manufacturers">
                 <xs:complexType>

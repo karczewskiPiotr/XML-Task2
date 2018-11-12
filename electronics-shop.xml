@@ -19,7 +19,7 @@
         </description>
     </document-information>
     <data>
-        <categories>
+        <product-filters>
             <manufacturers>
                 <manufacturer manufacturer-id="samsung">
                     <manufacturer-name>Samsung</manufacturer-name>
@@ -88,7 +88,7 @@
                 <product-type category-id="mouse">Mouse</product-type>
                 <product-type category-id="hoverboard">Hoverboard</product-type>
             </product-types>
-        </categories>
+        </product-filters>
         <products-list>
             <product product-id="i50" category-id="notebook" manufacturer-id="acer">
                 <name>Acer Swift 3</name>
