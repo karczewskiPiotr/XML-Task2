@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <electronics-shop
-    xmlns="electronics-shop-namespace"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="electronics-shop-namespace"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="electronics-shop-namespace electronics-shop.xsd">
     <document-information>
         <author>
-            <first-name>Łukasz</first-name>
+            <first-name>Lukasz</first-name>
             <last-name>Starosta</last-name>
             <student-id>217862</student-id>
         </author>
         <author>
             <first-name>Piotr</first-name>
-            <last-name>Karczewski</last-name>
+            <last-name>Karczewski_Starosta</last-name>
             <student-id>217846</student-id>
         </author>
         <description>
-        This XML document contains an example of an online electronics shop. To the left, there are different categories like manufacturers of the products (e.g. Samsung or Apple) and product types (e.g. mouse or keyboard). To the right, there is a list of all the products in the shop with additional information about them.
+            This XML document contains an example of an online electronics shop. To the left, there are different
+            categories like manufacturers of the products (e.g. Samsung or Apple) and product types (e.g. mouse or
+            keyboard). To the right, there is a list of all the products in the shop with additional information about
+            them.
         </description>
     </document-information>
     <data>

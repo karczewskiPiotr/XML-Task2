@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <xs:schema
-    xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:pt="product-type-namespace"
-           targetNamespace="electronics-shop-namespace"
-    xmlns:es="electronics-shop-namespace"
-           elementFormDefault="qualified">
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:pt="product-type-namespace"
+        targetNamespace="electronics-shop-namespace"
+        xmlns:es="electronics-shop-namespace"
+        elementFormDefault="qualified">
     <xs:import schemaLocation="product-type.xsd" namespace="product-type-namespace"/>
     <!--  definition of simple elements -->
     <xs:element name="electronics-shop" type="es:electronics-shop_type">
@@ -28,10 +28,22 @@
     </xs:element>
     <xs:element name="document-information" type="es:document-information_type"/>
     <xs:element name="data" type="es:data_type"/>
-    <xs:element name="author" type="es:author_type" />
+    <xs:element name="author" type="es:author_type"/>
     <xs:element name="description" type="xs:string"/>
-    <xs:element name="first-name" type="xs:string"/>
-    <xs:element name="last-name" type="xs:string" />
+    <xs:element name="first-name">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[A-Z][a-z]*"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="last-name">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[A-Z][a-z]*|[A-Z][a-z]*[-| ][A-Z][a-z]*|"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
     <xs:element name="student-id" type="xs:integer"/>
     <xs:element name="product-filters" type="es:product-filters_type"/>
     <xs:element name="products-list" type="es:products-list_type"/>
@@ -109,7 +121,7 @@
             <xs:element ref="es:description"/>
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="author_type" >
+    <xs:complexType name="author_type">
         <xs:sequence>
             <xs:element ref="es:first-name"/>
             <xs:element ref="es:last-name"/>
